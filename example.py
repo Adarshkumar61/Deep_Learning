@@ -39,6 +39,4 @@ if __name__ == "__main__":
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
                   loss=tf.keras.losses.SparseCategoricalCrossentropy(),
                   metrics=[tf.keras.metrics.Accuracy()])
-
-    # Example: Training the model (replace with actual data)
-    # model.fit(train_images, train_labels, epochs=10, validation_data=(test_images, test_labels))
+    model.fit(train_images, train_labels, epochs=10, validation_data=(test_images, test_labels))
