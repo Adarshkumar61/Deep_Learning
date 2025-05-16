@@ -40,3 +40,8 @@ if __name__ == "__main__":
                   loss=tf.keras.losses.SparseCategoricalCrossentropy(),
                   metrics=[tf.keras.metrics.Accuracy()])
     model.fit(train_images, train_labels, epochs=10, validation_data=(test_images, test_labels))
+    # train_images
+    # train_labels
+    # test_images
+    #  test_labels
+    #these are used when we add data and divide them into test and train
