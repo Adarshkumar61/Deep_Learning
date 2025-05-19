@@ -31,3 +31,15 @@ for i in range(25):
     test_images.shape #output : (10000, 32, 32, 3)
     
     
+    #Buidling a Convolution Neural Network:
+    
+    cnn_model = models.sequential([
+        layers.Conv2D(32, (3,3), activation = 'relu', input_shape = (32, 3,3)),
+        layers.MaxPooing((2,2)),
+        layers.Conv2D(64, (3,3), activation = 'relu'),
+        layers.MaxPooling((2,2)),
+        layers.Conv2D(64, (3,3), activation = 'relu'),
+        layers.Flatten(),
+        layers.Dense(64, activation = 'relu'),
+        layers.Dense(64, activation = 'softmax')
+    ])
