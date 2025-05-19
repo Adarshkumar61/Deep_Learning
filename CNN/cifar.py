@@ -43,3 +43,17 @@ for i in range(25):
         layers.Dense(64, activation = 'relu'),
         layers.Dense(64, activation = 'softmax')
     ])
+    
+    #compiling the model:
+    cnn_model.compile(
+        optimizer = 'adam',
+        loss = 'sparse_categorical_crossentropy',
+        metrics = ['accuracy']
+    )
+    #display the summary:
+    cnn_model.summary()
+    
+    # Training the Model:
+    cnn_training = cnn_model.fit(train_images, train_labels, epochs = 10, validation_data = (test_images, test_labels))
+    
+    
