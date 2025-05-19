@@ -20,3 +20,14 @@ for i in range(25):
     plt.imshow(train_images[i], cmap= plt.cm.binary)
     plt.xlabel(class_name[train_labels[i][0]])
     plt.show()
+    
+    #changing pixel values bw 0 and 1:
+    
+    train_images = train_images/255.0
+    test_images = test_images/255.0
+    
+    # checking the shapes
+    train_images.shape #output : (50000, 32, 32, 3)
+    test_images.shape #output : (10000, 32, 32, 3)
+    
+    
