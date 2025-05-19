@@ -54,6 +54,31 @@ for i in range(25):
     cnn_model.summary()
     
     # Training the Model:
-    cnn_training = cnn_model.fit(train_images, train_labels, epochs = 10, validation_data = (test_images, test_labels))
+    cnn_training = cnn_model.fit(train_images, train_labels, epochs = 3, validation_data = (test_images, test_labels))
     
+    #Evaluating the model:
+    
+    cnn_test_loss, cnn_test_acc = cnn_model.evaluate(test_images, test_labels, verbose = 2)
+    
+    #checking accuracy:
+    print(f"Accuracy of test data is: {cnn_test_acc}")  # accuracy is :65%
+    #accuracy will increase when we will increase the epochs , 
+    #because each iteration of epochs it will decrease loss and increase accuracy.
+    # epochs is time taking that why i have taken 3.
+    
+    #plotting Training and Validation Accuracy:
+    plt.figure(figsize=(10,10))
+    plt.plot(cnn_training.history['accuracy'], label = 'Traning accuracy')
+    plt.plot(cnn_training.history['val_accuracy'], label = 'Validation Accuracy')
+    plt.legend()
+    plt.show()
+    
+    # Plotting Training and Validaiton Loss:
+    plt.figure(figsize=(10,10))
+    plt.plot(cnn_training.history['loss'], label = 'training_loss')
+    plt.plot(cnn_model.history['val_loss'], label = 'validation_loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('loss')
+    plt.legend()
+    plt.show()
     
