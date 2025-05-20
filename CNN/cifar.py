@@ -81,4 +81,7 @@ for i in range(25):
     plt.ylabel('loss')
     plt.legend()
     plt.show()
+    # CONCLUSION:
+    # Created a model which tells what the object is (Basically identify Objects)
+    # we have used relu to identify complex graphs.
     
