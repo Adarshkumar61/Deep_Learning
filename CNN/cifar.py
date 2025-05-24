@@ -57,7 +57,7 @@ for i in range(25):
     cnn_training = cnn_model.fit(train_images, train_labels, epochs = 3, validation_data = (test_images, test_labels))
     
     #Evaluating the model:
-    
+     
     cnn_test_loss, cnn_test_acc = cnn_model.evaluate(test_images, test_labels, verbose = 2)                                                                                                             
     
     #checking accuracy:
