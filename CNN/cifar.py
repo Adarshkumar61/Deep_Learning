@@ -58,7 +58,7 @@ for i in range(25):
     
     #Evaluating the model:
     
-    cnn_test_loss, cnn_test_acc = cnn_model.evaluate(test_images, test_labels, verbose = 2)
+    cnn_test_loss, cnn_test_acc = cnn_model.evaluate(test_images, test_labels, verbose = 2)                                                                                                             
     
     #checking accuracy:
     print(f"Accuracy of test data is: {cnn_test_acc}")  # accuracy is :65%
