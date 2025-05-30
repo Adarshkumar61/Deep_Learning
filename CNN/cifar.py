@@ -64,7 +64,7 @@ for i in range(25):
     print(f"Accuracy of test data is: {cnn_test_acc}")  # accuracy is :65%
     #accuracy will increase when we will increase the epochs , 
     #because each iteration of epochs it will decrease loss and increase accuracy.
-    # epochs is time taking that why i have taken 3.
+    # epochs is time taking that why i have taken 3. 
     
     #plotting Training and Validation Accuracy:
     plt.figure(figsize=(10,10))
