@@ -45,7 +45,11 @@ for i in range(25):
         # reduce spatial sizes to make training more efficient
         layers.Conv2D(128, (3,3), activation = 'relu'),
         layers.Flatten(), # transforms 2D features into 1D
-        layers.Dense(64, activation = 'relu'),
+        
+        layers.Dense(128, activation = 'relu'),
+        # Dense is also caled fully connected layer.
+        # this is hidden layer with 12 neurons
+        #each neuron takes features from CNN and applies relu (non-linearity)
         
         layers.Dense(10, activation = 'softmax') # this will generate 10 outputs sum of total 1.
         
