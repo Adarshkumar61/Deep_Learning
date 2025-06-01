@@ -1,5 +1,6 @@
 import tensorflow as tf
-from tensorflow.keras import models, layers
+from tensorflow.keras.layers import MaxPooling2D, Conv2D, Dense, Flatten
+from tensorflow.keras.modes import sequential
 import matplotlib.pyplot as plt
 from tensorflow.keras.datasets import cifar10
 
@@ -33,25 +34,28 @@ for i in range(25):
     
     #Buidling a Convolution Neural Network:
     
-    cnn_model = models.sequential([
+    cnn_model = sequential([
         #1st convolution
-        layers.Conv2D(32, (3,3), activation = 'relu', input_shape = (32, 32, 3)),
-        layers.MaxPooing((2,2)),
+        Conv2D(32, (3,3), activation = 'relu', input_shape = (32, 32, 3)),
+        MaxPooling2D((2,2)),
         # it will downsample the image to focus on most important features
         
-        layers.Conv2D(64, (3,3), activation = 'relu'),
+        Conv2D(64, (3,3), activation = 'relu'),
         # 2nd covo layer increase feature richness 
-        layers.MaxPooling((2,2)),
+        MaxPooling2D((2,2)),
         # reduce spatial sizes to make training more efficient
-        layers.Conv2D(128, (3,3), activation = 'relu'),
-        layers.Flatten(), # transforms 2D features into 1D
+        Conv2D(128, (3,3), activation = 'relu'),
+        Flatten(), # transforms 2D features into 1D
         
-        layers.Dense(128, activation = 'relu'),
+        Dense(128, activation = 'relu'),
         # Dense is also caled fully connected layer.
         # this is hidden layer with 12 neurons
-        #each neuron takes features from CNN and applies relu (non-linearity)
+        #each neuron takes features from CNN and applies relu(non-linearity)
         
-        layers.Dense(10, activation = 'softmax') # this will generate 10 outputs sum of total 1.
+        Dense(10, activation = 'softmax') 
+        # this is output layer.
+        # the softmax fn turns the output into probabilities and all sum to 1.
+        # like this :  [0.01, 0.90, 0.03, 0.01, 0.01, 0.00, 0.01, 0.00, 0.02, 0.01] : (1)
         
     ])
     
