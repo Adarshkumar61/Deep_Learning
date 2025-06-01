@@ -20,7 +20,7 @@ for i in range(25):
     plt.grid(False)
     plt.imshow(train_images[i], cmap= plt.cm.binary)
     plt.xlabel(class_name[train_labels[i][0]])
-    plt.show()
+    plt.show() 
     
     #changing pixel values bw 0 and 1:
     
