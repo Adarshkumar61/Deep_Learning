@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.layers import MaxPooling2D, Conv2D, Dense, Flatten
 from tensorflow.keras.modes import sequential
 import matplotlib.pyplot as plt
-from tensorflow.keras.datasets import cifar10
+from tensorflow.keras.datasets import cifar10 
 
 #dataset loading:
 
