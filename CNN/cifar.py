@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow as tf #not downloaded yet but code is working 
 from tensorflow.keras.layers import MaxPooling2D, Conv2D, Dense, Flatten
 from tensorflow.keras.modes import sequential
 import matplotlib.pyplot as plt
