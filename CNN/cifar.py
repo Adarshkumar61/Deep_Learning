@@ -69,7 +69,7 @@ for i in range(25):
     cnn_model.summary()
     
     # Training the Model:
-    cnn_training = cnn_model.fit(train_images, train_labels, epochs = 10, validation_data = (test_images, test_labels))
+    cnn_training = cnn_model.fit(train_images, train_labels, epochs = 11, validation_data = (test_images, test_labels))
     
     #Evaluating the model:
      
