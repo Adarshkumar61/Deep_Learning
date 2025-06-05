@@ -52,7 +52,7 @@ for i in range(25):
         # this is hidden layer with 12 neurons
         #each neuron takes features from CNN and applies relu(non-linearity)
         
-        Dense(10, activation = 'softmax') 
+        Dense(10, activation = 'softmax')  
         # this is output layer.
         # the softmax fn turns the output into probabilities and all sum to 1.
         # like this :  [0.01, 0.90, 0.03, 0.01, 0.01, 0.00, 0.01, 0.00, 0.02, 0.01] : (1)
