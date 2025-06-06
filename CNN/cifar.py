@@ -97,4 +97,5 @@ for i in range(25):
     # CONCLUSION:
     # Created a model which tells what the object is (Basically identify Objects)
     # we have used relu to identify complex graphs.
+    cnn_model.predict(test_images)
     
