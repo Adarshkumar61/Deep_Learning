@@ -26,3 +26,12 @@ print(y_train[2]) #it will print the label which is 4
 X_train = X_train/255
 X_test = X_test/255 
 
+#building a Neural Network:
+
+model = keras.sequential ([
+    keras.layers.Flatten(input_shape = (28,28)),
+    keras.layers.Dense(activation = 'relu'),
+    keras.layers.Dense(activation = 'relu'),
+    keras.layers.Dense(activation = 'sigmoid')
+])
+
