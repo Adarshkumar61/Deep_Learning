@@ -19,7 +19,7 @@ X_test.shape # 10000, 28, 28 means there are 10k images in training and size of 
 plt.imshow(X_train[2])
 plt.show()
 #printing also the label:
-print(y_train[2]) #it will print the label which is 4
+print(y_train[2]) #it will print the label which is 4 
 
 #now we will do the scaling the values:
 # bw 0 to 1:
