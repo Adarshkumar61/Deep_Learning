@@ -23,7 +23,7 @@ print(y_train[2]) #it will print the label which is 4
 
 #now we will do the scaling the values:
 # bw 0 to 1:
-X_train = X_train/255
+X_train = X_train/255 
 X_test = X_test/255 
 
 #building a Neural Network:
