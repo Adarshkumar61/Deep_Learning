@@ -16,7 +16,7 @@ X_train.shape # 60000 ,28,28 means there are 60k images and the dimension of ima
 X_test.shape # 10000, 28, 28 means there are 10k images in training and size of the image is 28* 28
 
 # displaying an image:
-plt.imshow(X_train[2])
+plt.imshow(X_train[2]) 
 plt.show()
 #printing also the label:
 print(y_train[2]) #it will print the label which is 4
@@ -35,3 +35,11 @@ model = keras.sequential ([
     keras.layers.Dense(activation = 'sigmoid')
 ])
 
+#compiling the model :
+model.compile(
+    optimizer = 'adam',
+    loss = 'sparse_categorical_crossentropy',
+    metrics = ['accuracy']
+)
+
+#training the Neural Network:
