@@ -29,7 +29,7 @@ X_test = X_test/255
 #building a Neural Network:
 
 model = keras.sequential ([ 
-    keras.layers.Flatten(input_shape = (28,28)),
+    keras.layers.Flatten(input_shape = (28, 28, 1)),
     keras.layers.Dense(activation = 'relu'),
     keras.layers.Dense(activation = 'relu'),
     keras.layers.Dense(activation = 'sigmoid')
