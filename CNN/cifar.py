@@ -92,7 +92,7 @@ for i in range(25):
     plt.plot(cnn_model.history['val_loss'], label = 'validation_loss')
     plt.xlabel('Epochs')
     plt.ylabel('loss')
-    plt.legend()
+    plt.legend() 
     plt.show()
     # CONCLUSION:
     # Created a model which tells what the object is (Basically identify Objects)
