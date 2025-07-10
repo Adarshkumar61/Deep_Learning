@@ -2,7 +2,7 @@ import tensorflow as tf #not downloaded yet but code is working
 from tensorflow.keras.layers import MaxPooling2D, Conv2D, Dense, Flatten
 from tensorflow.keras.modes import sequential
 import matplotlib.pyplot as plt
-from tensorflow.keras.datasets import cifar10 
+from tensorflow.keras.datasets import cifar10
 
 #dataset loading:
 
@@ -52,7 +52,7 @@ for i in range(25):
         # this is hidden layer with 12 neurons
         #each neuron takes features from CNN and applies relu(non-linearity)
         
-        Dense(10, activation = 'softmax')  
+        Dense(10, activation = 'softmax')
         # this is output layer.
         # the softmax fn turns the output into probabilities and all sum to 1.
         # like this :  [0.01, 0.90, 0.03, 0.01, 0.01, 0.00, 0.01, 0.00, 0.02, 0.01] : (1)
@@ -97,5 +97,5 @@ for i in range(25):
     # CONCLUSION:
     # Created a model which tells what the object is (Basically identify Objects)
     # we have used relu to identify complex graphs.
-    cnn_model.predict(test_images)
+    
     
