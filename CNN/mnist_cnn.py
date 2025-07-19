@@ -10,6 +10,8 @@ import matplotlib.pyplot as plt
 
 x_train = x_train.reshape(-1, 28,28, 1).astype('float32') / 255
 x_test = x_test.reshape(-1, 28, 28, 1).astype('float32') / 255
+explaination:
+    
 
 # Build the model:
 model = models.sequential([
