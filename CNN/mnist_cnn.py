@@ -40,3 +40,4 @@ history = model.fit(x_train, y_train, ephocs = 5, valdation_data = (x_test, y_te
 test_loss, test_acc = model.evaluate(x_test, y_test)
 
 print(f'Test accuracy is: {test_acc: .2f}')
+test accuracy
