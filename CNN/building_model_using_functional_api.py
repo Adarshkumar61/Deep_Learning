@@ -30,3 +30,4 @@ model.compile(
 )
 
 
+#fitting the model:
