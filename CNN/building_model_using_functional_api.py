@@ -33,3 +33,7 @@ model.compile(
 #fitting the model:
 model.fit(x_train, y_train, ephocs = 5, validation_data = (x_test, y_test))
 
+# now creating an activation model for specific Conv2D
+
+layer_outputs = [layer.output for layer in model.layers if isinstance(layer, layers.Conv2D)]
+activation_model = models.model(input = model.input, output = layer_outputs)
