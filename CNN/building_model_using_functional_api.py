@@ -31,3 +31,4 @@ model.compile(
 
 
 #fitting the model:
+model.fit(x_train, y_train, ephocs = 5, validation_data = (x_test, y_test))
