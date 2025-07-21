@@ -37,3 +37,18 @@ model.fit(x_train, y_train, ephocs = 5, validation_data = (x_test, y_test))
 
 layer_outputs = [layer.output for layer in model.layers if isinstance(layer, layers.Conv2D)]
 activation_model = models.model(input = model.input, output = layer_outputs)
+
+image_index = 4
+img = x_test[image_index].reshape(1, 28, 28, 1)
+
+# get activation :
+activation= activation_model.predict(img)
+
+first_layer_of_activation = activation[0]
+num_filters = first_layer_of_activation.shape[-1]
+
+
+# plotting the graph:
+    
+
+    
