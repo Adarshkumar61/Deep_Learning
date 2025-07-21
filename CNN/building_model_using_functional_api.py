@@ -49,3 +49,10 @@ num_filters = first_layer_of_activation.shape[-1]
 
 
 # plotting the graph: 
+plt.figure(figsize= (15, 5))
+for i in range(min(num_filters, 6)):
+    plt.subplot(1, 6, i+1)
+    plt.axis('off')
+    plt.title(f'filter:  {i}')
+plt.tight_layout()
+plt.show()
