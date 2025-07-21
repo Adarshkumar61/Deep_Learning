@@ -48,4 +48,4 @@ first_layer_of_activation = activation[0]
 num_filters = first_layer_of_activation.shape[-1]
 
 
-# plotting the graph:
+# plotting the graph: 
