@@ -49,6 +49,3 @@ num_filters = first_layer_of_activation.shape[-1]
 
 
 # plotting the graph:
-    
-
-    
