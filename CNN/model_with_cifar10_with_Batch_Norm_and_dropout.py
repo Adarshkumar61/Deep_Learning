@@ -51,3 +51,4 @@ model.add(layers.Dense(10, activation = 'softmax'))
 model.add(layers.Dropout(0.25))
 
 
+#compiling the Model:
