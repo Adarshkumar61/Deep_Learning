@@ -8,4 +8,7 @@ import numpy as np
 
 
 x_train = x_train / 255
-y_train = y_train / 255
+x_test = x_test / 255
+
+y_train = tf.keras.utils.to_categorical(y_train, 10)
+y_test = tf.keras.utils.to_categorical(y_test, 10)
