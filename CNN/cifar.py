@@ -1,8 +1,8 @@
 import tensorflow as tf #not downloaded yet but code is working 
-from tensorflow.keras.layers import MaxPooling2D, Conv2D, Dense, Flatten
-from tensorflow.keras.modes import sequential
+from tf.keras.layers import MaxPooling2D, Conv2D, Dense, Flatten
+from tf.keras.modes import sequential
 import matplotlib.pyplot as plt
-from tensorflow.keras.datasets import cifar10
+from tf.keras.datasets import cifar10
 
 #dataset loading:
 
