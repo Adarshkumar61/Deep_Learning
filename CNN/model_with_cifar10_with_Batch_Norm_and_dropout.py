@@ -71,3 +71,7 @@ actual = y_test[img_index]
 
 prediction = model.predict(np.expand_dims(img, axis= 0))
 predicted = np.argmax(prediction)
+
+plt.imshow(img)
+plt.title(f'predicted image: {predicted}, actual: {actual}')
+plt.axis('off')
