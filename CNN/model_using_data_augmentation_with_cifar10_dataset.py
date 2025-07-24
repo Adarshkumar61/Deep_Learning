@@ -16,3 +16,6 @@ x_test = x_test.astype('float32') / 255
 y_train = to_categorical(y_train, 10)
 y_test = to_categorical(y_test, 10)
 
+model = models.sequential()
+
+
