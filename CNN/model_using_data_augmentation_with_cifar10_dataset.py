@@ -20,3 +20,4 @@ model = models.sequential()
 
 # BLOCK1:
 
+model.add(layers.Conv2D(32, padding = 'same', activation = 'relu', input_shape = (28, 28,3)))
