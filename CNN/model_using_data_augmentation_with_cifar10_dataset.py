@@ -18,4 +18,5 @@ y_test = to_categorical(y_test, 10)
 
 model = models.sequential()
 
+# BLOCK1:
 
