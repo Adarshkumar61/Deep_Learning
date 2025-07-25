@@ -34,3 +34,5 @@ model.add(layers.Conv2D(64, padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
 model.add(layers.MaxPooling2D(2,2))
 model.add(layers.Dropout(0.2))
+
+# BLOCK3:
