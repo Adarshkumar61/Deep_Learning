@@ -36,3 +36,8 @@ model.add(layers.MaxPooling2D(2,2))
 model.add(layers.Dropout(0.2))
 
 # BLOCK3:
+# BLOCK3:
+model.add(layers.Conv2D(128, padding = 'same', activation = 'relu'))
+model.add(layers.BarchNormalization())
+model.add(layers.Conv2D(128, padding = 'same', activation = 'relu'))
+model.add
