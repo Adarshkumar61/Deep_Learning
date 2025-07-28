@@ -16,30 +16,36 @@ x_test = x_test.astype('float32') / 255
 y_train = to_categorical(y_train, 10)
 y_test = to_categorical(y_test, 10)
 
+#data augmentation:
+data = ImageDataGenerator(
+    
+)
+
+
 model = models.sequential()
 
 # BLOCK1:
 
-model.add(layers.Conv2D(32, padding = 'same', activation = 'relu', input_shape = (28, 28,3)))
+model.add(layers.Conv2D(32, (3,3), padding = 'same', activation = 'relu', input_shape = (28, 28,3)))
 model.add(layers.BatchNormalization())
-model.add(layers.conv2D(32, padding = 'same', activation = 'relu'))
+model.add(layers.Conv2D(32, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
 model.add(layers.MaxPooling2D(2,2))
 model.add(layers.Dropout(0.2))
 
 # BLOCK2:
-model.add(layers.Conv2D(64, padding = 'same', activation = 'relu'))
+model.add(layers.Conv2D(64, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
-model.add(layers.Conv2D(64, padding = 'same', activation = 'relu'))
+model.add(layers.Conv2D(64, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
 model.add(layers.MaxPooling2D(2,2))
 model.add(layers.Dropout(0.2))
 
 
 # BLOCK3:
-model.add(layers.Conv2D(128, padding = 'same', activation = 'relu'))
-model.add(layers.BarchNormalization())
-model.add(layers.Conv2D(128, padding = 'same', activation = 'relu'))
+model.add(layers.Conv2D(128, (3,3), padding = 'same', activation = 'relu'))
+model.add(layers.BatchNormalization())
+model.add(layers.Conv2D(128, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
 model.add(layers.MaxPooling2D(2,2))
 model.add(layers.Dropout(0.2))
