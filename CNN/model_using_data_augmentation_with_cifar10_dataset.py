@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 x_train =  x_train.astype('float32') / 255
 x_test = x_test.astype('float32') / 255
 
-
+#converted labels to one hot encoding
 y_train = to_categorical(y_train, 10)
 y_test = to_categorical(y_test, 10)
 
