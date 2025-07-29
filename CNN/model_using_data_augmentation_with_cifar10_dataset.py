@@ -18,7 +18,12 @@ y_test = to_categorical(y_test, 10)
 
 #data augmentation:
 data = ImageDataGenerator(
-    
+    rotation_range=15,
+    width_shift_range=0.1,
+    height_shift_range=0.1,
+    zoom_range=0.1,
+    horizontal_flip=True,
+    fill_mode='nearest',
 )
 
 
@@ -50,3 +55,16 @@ model.add(layers.BatchNormalization())
 model.add(layers.MaxPooling2D(pool_size = (2,2)))
 model.add(layers.Dropout(0.2))
 
+
+model.add(layers.Flatten())
+model.add(layers.Dense(128, activation = 'relu'))
+model.add(layers.Dense(10, activation = 'softmax'))
+model.add(layers.Dropout(0.25))
+
+model.complie(
+    optimizer = 'adam',
+    loss = 'categorical_crossentropy',
+    metrics = ['accuracy']
+)
+
+history = model.fit()
