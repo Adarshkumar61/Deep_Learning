@@ -68,4 +68,28 @@ model.complie(
     metrics = ['accuracy']
 )
 
-history = model.fit()
+history = model.fit(data.flow(x_train, y_train, batch_size = 64), epochs = 15, validation_data = (x_test, y_test))
+
+#saving the model:
+model.save('cnn_cifar10_model.h5')
+print('model saved')
+
+#loading the model:
+tf.keras.models.load_model('cnn_cifar10_model.h5')
+print('model loaded')
+
+class_names = ['airplane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
+img_index = 1
+
+predicted_image = x_test[img_index]
+
+actual = np.argmax(y_test[img_index])
+
+#prediction:
+prediction = model.predict(np.expand_dims(predicted_image, 0))
+final_prediciton = np.argmax(prediction)
+
+
+plt.imshow(predicted_image)
+plt.title(f'predicted image: {final_prediciton}, actual image: {actual}')
