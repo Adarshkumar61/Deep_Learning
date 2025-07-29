@@ -1,14 +1,11 @@
 import tensorflow as tf
-import open_cv as cv
 import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
-from PIL import Image
 from tensorflow import keras
-from keras.datasets import datasets
+from tf.keras.datasets import mnist
 
 #loading the Dataset:
-(X_train, y_train), (X_test, y_test) = mnist.dataset()
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
 
 #checking the size of data:
 
@@ -23,12 +20,12 @@ print(y_train[2]) #it will print the label which is 4
 
 #now we will do the scaling the values:
 # bw 0 to 1:
-X_train = X_train/255 
-X_test = X_test/255 
+X_train = X_train / 255.0 
+X_test = X_test / 255.0
 
 #building a Neural Network:
 
-model = keras.sequential ([ 
+model = keras.sequential ([
     keras.layers.Flatten(input_shape = (28, 28, 1)),
     keras.layers.Dense(activation = 'relu'),
     keras.layers.Dense(activation = 'relu'),

@@ -30,7 +30,7 @@ model.add(layers.Conv2D(32, (3,3), padding = 'same', activation = 'relu', input_
 model.add(layers.BatchNormalization())
 model.add(layers.Conv2D(32, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
-model.add(layers.MaxPooling2D(2,2))
+model.add(layers.MaxPooling2D(pool_size = (2,2)))
 model.add(layers.Dropout(0.2))
 
 # BLOCK2:
@@ -38,7 +38,7 @@ model.add(layers.Conv2D(64, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
 model.add(layers.Conv2D(64, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
-model.add(layers.MaxPooling2D(2,2))
+model.add(layers.MaxPooling2D(pool_size = (2,2)))
 model.add(layers.Dropout(0.2))
 
 
@@ -47,5 +47,6 @@ model.add(layers.Conv2D(128, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
 model.add(layers.Conv2D(128, (3,3), padding = 'same', activation = 'relu'))
 model.add(layers.BatchNormalization())
-model.add(layers.MaxPooling2D(2,2))
+model.add(layers.MaxPooling2D(pool_size = (2,2)))
 model.add(layers.Dropout(0.2))
+
