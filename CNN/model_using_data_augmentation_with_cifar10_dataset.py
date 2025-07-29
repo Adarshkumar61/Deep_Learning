@@ -26,8 +26,9 @@ data = ImageDataGenerator(
     fill_mode='nearest',
 )
 
+data.fit(x_train)
 
-model = models.sequential()
+model = models.Sequential()
 
 # BLOCK1:
 
