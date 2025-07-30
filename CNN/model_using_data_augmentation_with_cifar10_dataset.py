@@ -59,8 +59,9 @@ model.add(layers.Dropout(0.2))
 
 model.add(layers.Flatten())
 model.add(layers.Dense(128, activation = 'relu'))
-model.add(layers.Dense(10, activation = 'softmax'))
 model.add(layers.Dropout(0.25))
+model.add(layers.Dense(10, activation = 'softmax'))
+
 
 model.complie(
     optimizer = 'adam',

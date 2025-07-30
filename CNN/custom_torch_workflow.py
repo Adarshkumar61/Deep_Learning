@@ -41,7 +41,7 @@ model = keras.Sequential(
         layers.MaxPooling2D(pool_size=(2, 2)),
         layers.Flatten(),
         layers.Dropout(0.5),
-        layers.Dense(num_classes),
+        layers.Dense(num_classes, activation = 'softmax'),
     ]
 )
 
