@@ -59,7 +59,7 @@ for layer in res_net.layers:
     
     # now we gonna compile the model:
     model.compile(
-        optimizer = Adam(),
+        optimizer = Adam(), 
         loss = 'categorical_crossentropy',
         metrics = ['accuracy']
     )
