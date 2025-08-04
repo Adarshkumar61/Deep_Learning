@@ -18,7 +18,7 @@ img_size = 224
 batch_size = 32
 datagen = ImageDataGenerator(
     rescale = 1.225,
-    batch_size = batch_size,
+    validation_split = 0.2,
     rotation_range = 15,
     zoom_range = 0.1,
     horizontal_flip = True
@@ -28,7 +28,7 @@ train_gen = datagen.flow_from_directory(
     # link of the file,
     target_size = (img_size, img_size),
     batch_size = batch_size,
-    class_model = 'categorical',
+    class_mode = 'categorical',
     subset = 'training'
 )
 
