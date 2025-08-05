@@ -11,3 +11,7 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.optimizers import Adam
 
 
+# declearling the variables:
+img_size = 224
+batch_size = 32
+epochs = 15
