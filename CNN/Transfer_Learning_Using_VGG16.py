@@ -26,3 +26,4 @@ datagen = ImageDataGenerator(
     horizontal_flip = True
 )
 
+#data split into training and validation:
