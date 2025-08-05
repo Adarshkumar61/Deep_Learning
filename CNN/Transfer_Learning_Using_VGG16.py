@@ -15,3 +15,14 @@ from tensorflow.keras.optimizers import Adam
 img_size = 224
 batch_size = 32
 epochs = 15
+
+
+#Data Augmentation:
+datagen = ImageDataGenerator(
+    rescale = 1./255,
+    validation_split = 0.2,
+    zoom_range = 0.1,
+    rotation_range = 15,
+    horizontal_flip = True
+)
+
