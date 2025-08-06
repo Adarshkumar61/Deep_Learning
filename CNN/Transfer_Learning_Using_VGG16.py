@@ -9,7 +9,7 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.optimizers import Adam
-
+from tensorflow.keras.preprocessing import preprocessor_input
 
 # declearling the variables:
 img_size = 224
@@ -87,3 +87,8 @@ class_label = list(train_gen.num_indices.keys())
 print(f'Prediciton is: {class_label[prediction_final]}')
 
 print(f'actual label is: {class_label[prediction_final]}')
+
+plt.imshow(img_path)
+plt.title(f'acutal class: {class_label[prediction_final]}, predicted: {class_label[prediction_final]}')
+plt.axis('off')
+plt.show()
