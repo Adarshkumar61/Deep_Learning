@@ -66,3 +66,22 @@ history = model.fit(
 )
 
 # Fine-tuning: Unfreeze some layers of the base model
+base_model.trainable = True
+for layer in base_model.layers[:-30]:
+    layer.trainable = False
+
+model.compile(optimizer=tf.keras.optimizers.Adam(1e-5),
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+
+# Continue training (fine-tuning)
+history_finetune = model.fit(
+    train_generator,
+    epochs=10,
+    validation_data = val_generator
+)
+
+# Save the model
+model.save('mobilenetv2_finetuned.h5')
+
+
