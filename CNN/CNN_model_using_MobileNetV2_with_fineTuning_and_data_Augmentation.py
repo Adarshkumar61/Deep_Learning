@@ -42,3 +42,27 @@ val_generator = datagen.flow_from_directory(
 )
 
 # Load MobileNetV2 base model
+base_model = MobileNetV2(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
+base_model.trainable = False  # Freeze base model
+
+# Add custom layers on top
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+x = Dropout(0.2)(x)
+predictions = Dense(train_generator.num_classes, activation='softmax')(x)
+
+model = Model(inputs=base_model.input, outputs=predictions)
+
+# Compile model
+model.compile(optimizer=tf.keras.optimizers.Adam(),
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+
+# Train the model (initial training with frozen base)
+history = model.fit(
+    train_generator,
+    epochs=10,
+    validation_data=val_generator
+)
+
+# Fine-tuning: Unfreeze some layers of the base model
