@@ -85,3 +85,17 @@ history_finetune = model.fit(
 model.save('mobilenetv2_finetuned.h5')
 
 
+#prediction:
+
+img_path = ''
+img = image.load_img(img_path, target_size  = (224, 224))
+img_to_arr = image.to_array(img)
+
+expand_dim = np.expand_dims(img_to_arr, 0)
+
+expand_dim = preprocess_input(expand_dim)
+
+pred = model.predict(expand_dim)
+prediction = np.argmax(pred[0])
+
+class_label = list(train_generator.num_indices.keys())
