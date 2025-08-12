@@ -16,7 +16,7 @@ x_test = pad_sequence(x_test, pad_seq = pad_seq)
 
 #building the RNN model:
 model = sequential([
-    Embedding(input_dim = num_words, output_dim = 32, input_length = pad_seq)
+    Embedding(input_dim = num_words, output_dim = 32, input_length = pad_seq),
     simpleRNN(units = 32, return_sequences = False),
     Dense(1, activation = 'sigmoid')
 ])
