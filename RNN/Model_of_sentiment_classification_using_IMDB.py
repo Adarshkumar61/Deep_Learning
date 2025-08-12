@@ -9,14 +9,14 @@ from tensorflow.keras.layers import Dense, Embedding, simpleRNN
 num_words = 10000 # means loading data with 10k frequent words
 (x_train, y_train), (x_test, y_test) = imdb.load_data(num_words = num_words)
 
-pad_seq = 200
+max_len = 200
 
-x_train = pad_sequence(x_train, pad_seq = pad_seq)
-x_test = pad_sequence(x_test, pad_seq = pad_seq)
+x_train = pad_sequence(x_train, max_len = max_len)
+x_test = pad_sequence(x_test, max_len = max_len)
 
 #building the RNN model:
 model = sequential([
-    Embedding(input_dim = num_words, output_dim = 32, input_length = pad_seq), #used Embedding to convert word indexes into word vectors
+    Embedding(input_dim = num_words, output_dim = 32, input_length = max_len), #used Embedding to convert word indexes into word vectors
     simpleRNN(units = 32, return_sequences = False),
     Dense(1, activation = 'sigmoid')
 ])
