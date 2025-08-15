@@ -98,4 +98,8 @@ expand_dim = preprocess_input(expand_dim)
 pred = model.predict(expand_dim)
 prediction = np.argmax(pred[0])
 
+<<<<<<< HEAD
 class_label = list(train_generator.num_indices.keys()) 
+=======
+class_label = list(train_generator.num_indices.keys())
+>>>>>>> d991c5816bcb6f55c1c6a2b80c1e18fbd3457f82
