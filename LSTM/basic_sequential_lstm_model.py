@@ -28,3 +28,9 @@ for i in range(len(data)- seq_len):
     )
 
     model.fit(x, y, epochs = 200, verbose = 1)
+
+    # prediction:
+    test_input = np.array([i for i in range(16, 19)])
+    test_input = test_input.reshape(1, seq_len, 1)
+
+    
