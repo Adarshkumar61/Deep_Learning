@@ -33,4 +33,5 @@ for i in range(len(data)- seq_len):
     test_input = np.array([i for i in range(16, 19)])
     test_input = test_input.reshape(1, seq_len, 1)
 
-    
+    pred  = model.predict(test_input, verbose = 0)
+    print(f'Predicted next number is: {pred[0][0]}')
