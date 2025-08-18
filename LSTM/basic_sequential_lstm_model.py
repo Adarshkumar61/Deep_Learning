@@ -10,7 +10,7 @@ data = np.array([i for i in range(50)])
 
 x, y = [], []
 for i in range(len(data)- seq_len-pred_len+1):
-    x.appned(data[i:i+seq_len])
+    x.append(data[i:i+seq_len])
     y.append(data[i+seq_len:i+seq_len+pred_len])
 
 
@@ -21,6 +21,7 @@ for i in range(len(data)- seq_len-pred_len+1):
 
     model = Sequential()
     model.add(LSTM(50, activaiton = 'relu',return_sequences = True, input_shape= (seq_len, 1)))
+    # retrun_sequences is set for layer to make it compatible with the next LSTM layer
     model.add(Dense(1))
 
     model.compile(
