@@ -33,4 +33,14 @@ for line in data:
         input_sequences.append(n_seq)
 
 #pad sequences:
+max_len = max([len(x) for x in input_sequences])
+input_sequences = pad_sequences(input_sequences, max_len=max_len, padding = 'pre')
+
+
+# splitting feature and label:
+x, y = input_sequences[:,:-1], input_sequences[:,-1]
+y = to_categorical(y, num_classes = total_words)
+
+
+#model building:
 
