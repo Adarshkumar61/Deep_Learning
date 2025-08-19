@@ -20,4 +20,17 @@ data = [
     "I love robots"
 ]
 
+# tokenization:
+tokenizer = Tokenizer()
+tokenizer.fit_on_texts(data)
+total_words = len(tokenizer.word_index) +1
+
+input_sequences = []
+for line in data:
+    token_list = tokenizer.texts_to_sequences([line])[0]
+    for i in range(1, len(token_list)):
+        n_seq = token_list[:i+1]
+        input_sequences.append(n_seq)
+
+#pad sequences:
 
