@@ -43,4 +43,11 @@ y = to_categorical(y, num_classes = total_words)
 
 
 #model building:
+model = Sequential()
+model.add(Embedding(total_words, 50, input_length = max_len-1))
+model.add(LSTM(100))
+model.add(Dense(total_words, activation='softmax'))
+
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.fit(x, y, epochs = 500, verbose = 0)
 
