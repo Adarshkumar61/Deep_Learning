@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 x_train = x_train.reshape(1, 28, 28, -1).astype('float32') /255
 x_test = x_test.reshape(1, 28, 28, -1).astype('float32') / 255
 
+
 # model (using functional API):
 inputs = input(shape = (28, 28, 1))
 x = layers.Conv2D(32, (3, 3), activation = 'relu', name = 'conv1')(inputs)
@@ -36,16 +37,18 @@ model.fit(x_train, y_train, ephocs = 5, validation_data = (x_test, y_test))
 # now creating an activation model for specific Conv2D
 
 layer_outputs = [layer.output for layer in model.layers if isinstance(layer, layers.Conv2D)]
-activation_model = models.model(input = model.input, output = layer_outputs)
+activation_model = models.model(input = model.input, output = layer_outputs)  
 
 image_index = 4
-img = x_test[image_index].reshape(1, 28, 28, 1)
+img = x_test[image_index].reshape(1, 28, 28, 1) 
 
 # get activation :
 activation= activation_model.predict(img)
 
 first_layer_of_activation = activation[0]
 num_filters = first_layer_of_activation.shape[-1]
+
+print(f'predicted class: {np.argmax(model.predict(img))}')
 
 
 # plotting the graph: 
