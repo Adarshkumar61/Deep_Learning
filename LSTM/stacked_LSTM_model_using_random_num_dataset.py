@@ -14,4 +14,9 @@ model = Sequential([
     Dense(1)
 ])
 
+model.compile(
+    optimizer = 'adam',
+    loss = ',mse'
+)
+
 
