@@ -19,4 +19,4 @@ model.compile(
     loss = ',mse'
 )
 
-
+history = model.fit(x, y, epochs = 10, batch_size = 32, verbose = 0)
