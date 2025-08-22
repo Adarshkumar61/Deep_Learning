@@ -13,3 +13,9 @@ price = df['close'].values.reshape(-1, 1)
 scaler = MinMaxScaler(feature_range= (0,1))
 scaled_data = scaler.fit_transform(price)
 
+x , y = [], []
+seq_len = 60
+for i in range(seq_len, len(scaled_data)):
+    x.append(scaled_data[i-seq_len:i, 0])
+    y.append(scaled_data[i, 0])
+
