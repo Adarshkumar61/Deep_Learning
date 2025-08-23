@@ -24,7 +24,7 @@ model = sequential([
 #compiling the model:
 model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
-model.fit(x_train, y_train, epochs = 5, batch_size = 64, validation_split = 0.2)
+history = model.fit(x_train, y_train, epochs = 5, batch_size = 64, validation_data = (x_test, y_test))
 # checking loss and accuracy:
 loss, acc = model.evaluate(x_test, y_test)
 
