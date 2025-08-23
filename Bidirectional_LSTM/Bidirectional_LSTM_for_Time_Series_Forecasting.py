@@ -39,8 +39,9 @@ model.compile(
     optimizer = 'adam',
     loss = 'mse'
 )
+early_stop = EarlyStopping(monitor ='val_loss', patience = 10, restore_best_weights = True)
 
-history = model.fit(X_train, y_train, epochs = 10, batch_size = 32, verbose = 0)
+history = model.fit(X_train, y_train, epochs = 100, callbacks = [early_stop],batch_size = 32, verbose = 0)
 
 model.evaluate(x_test, y_test, verbose=0)
 print("Model evaluation complete.")
