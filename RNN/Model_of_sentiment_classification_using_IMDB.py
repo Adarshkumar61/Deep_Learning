@@ -28,4 +28,5 @@ history = model.fit(x_train, y_train, epochs = 5, batch_size = 64, validation_da
 # checking loss and accuracy:
 loss, acc = model.evaluate(x_test, y_test)
 
-print(f'test accuracy is: ', acc)
+print(f'test accuracy is: {acc:.4f}')
+print(f'test loss is: {loss:.4f}')
