@@ -1,7 +1,8 @@
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
-from tensorflow import keras
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from tensorflow.keras.models import Sequential
 from tf.keras.datasets import mnist
 
 #loading the Dataset:
@@ -14,7 +15,6 @@ X_test.shape # 10000, 28, 28 means there are 10k images in training and size of 
 
 # displaying an image:
 plt.imshow(X_train[2])
-plt.show()
 #printing also the label:
 print(y_train[2]) #it will print the label which is 4 
 
@@ -22,14 +22,21 @@ print(y_train[2]) #it will print the label which is 4
 # bw 0 to 1:
 X_train = X_train / 255.0 
 X_test = X_test / 255.0
+x_train = x_train.reshape(-1, 28,28, 1).astype('float32')
+x_test = x_test.reshape(-1, 28, 28, 1).astype('float32')
+# -1 means it will automatically take the batch size
+
 
 #building a Neural Network:
 
-model = keras.sequential ([
-    keras.layers.Flatten(input_shape = (28, 28, 1)),
-    keras.layers.Dense(activation = 'relu'),
-    keras.layers.Dense(activation = 'relu'),
-    keras.layers.Dense(activation = 'sigmoid')
+model = Sequential ([
+    Conv2D(32, (3,3), activation = 'relu', input_shape = (28, 28, 1)),
+    MaxPooling2D(2,2),
+    Conv2D(64, (3,3), activation = 'relu'),
+    MaxPooling2D(2,2),
+    Flatten(),
+    Dense(128, activation = 'relu'),
+    Dense(10, activation = 'softmax')
 ])
 
 #compiling the model :
@@ -40,3 +47,7 @@ model.compile(
 )
 
 #training the Neural Network:
+model.fit(x_train, y_train, epochs = 5, batch_size = 64, validation_data = (x_test, y_test))
+
+test_loss, test_acc = model.evaluate(x_test, y_test)
+print('the test accuracy is: '.title(),test_acc)

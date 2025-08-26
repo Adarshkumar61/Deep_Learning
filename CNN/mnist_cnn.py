@@ -2,6 +2,7 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.datasets import mnist
 import matplotlib.pyplot as plt
+import numpy as np
 
 # laod data :
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
@@ -54,4 +55,5 @@ test_loss, test_acc = model.evaluate(x_test, y_test)
 
 print(f'Test accuracy is: {test_acc: .2f}')
 # test accuracy is alomost 99%
-# which is good  
+# which is good
+
