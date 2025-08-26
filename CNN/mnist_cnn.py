@@ -60,3 +60,5 @@ print(f'Test accuracy is: {test_acc: .2f}')
 pred_on_x_test = model.predict(x_test)
 
 img_index = 5
+
+pred = np.argmax(pred_on_x_test[img_index])
