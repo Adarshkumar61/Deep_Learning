@@ -62,3 +62,13 @@ pred_on_x_test = model.predict(x_test)
 img_index = 5
 
 pred = np.argmax(pred_on_x_test[img_index])
+
+plt.imshow(x_test[img_index].reshape(28, 28), cmap= 'gray')
+actual =y_test[img_index]
+plt.title(f'Predicted: {pred}, actual: {actual}')
+plt.axis('off')
+plt.show()
+print(f'predicted number : {pred}')
+print(f'actual number: {actual}')
+if pred == actual:
+    print('Correct prediction')
