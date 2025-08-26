@@ -57,3 +57,4 @@ print(f'Test accuracy is: {test_acc: .2f}')
 # test accuracy is alomost 99%
 # which is good
 
+pred_on_x_test = model.predict(x_test)
