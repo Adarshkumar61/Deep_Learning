@@ -58,3 +58,5 @@ print(f'Test accuracy is: {test_acc: .2f}')
 # which is good
 
 pred_on_x_test = model.predict(x_test)
+
+img_index = 5
