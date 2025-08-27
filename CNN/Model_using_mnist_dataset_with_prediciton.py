@@ -6,22 +6,22 @@ from tensorflow.keras.models import Sequential
 from tf.keras.datasets import mnist
 
 #loading the Dataset:
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 #checking the size of data:
 
-X_train.shape # 60000 ,28,28 means there are 60k images and the dimension of image is 28 * 28 
-X_test.shape # 10000, 28, 28 means there are 10k images in training and size of the image is 28* 28
+x_train.shape # 60000 ,28,28 means there are 60k images and the dimension of image is 28 * 28 
+x_test.shape # 10000, 28, 28 means there are 10k images in training and size of the image is 28* 28
 
 # displaying an image:
-plt.imshow(X_train[2])
+plt.imshow(x_train[2])
 #printing also the label:
 print(y_train[2]) #it will print the label which is 4 
 
 #now we will do the scaling the values:
 # bw 0 to 1:
-X_train = X_train / 255.0 
-X_test = X_test / 255.0
+x_train = x_train / 255.0 
+x_test = x_test / 255.0
 x_train = x_train.reshape(-1, 28,28, 1).astype('float32')
 x_test = x_test.reshape(-1, 28, 28, 1).astype('float32')
 # -1 means it will automatically take the batch size
