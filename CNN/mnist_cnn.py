@@ -44,7 +44,9 @@ model.compile(
     metrics = ['accuracy']
 )
 
-
+class_names = [str(i) for i in range(10)]
+class_names = ['Zero', 'one', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+#you can also use this list to display class names instead of numbers
 # training :
 history = model.fit(x_train, y_train, ephocs = 5, valdation_data = (x_test, y_test))
 
