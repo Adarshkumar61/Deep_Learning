@@ -73,7 +73,7 @@ for layer in res_net.layers:
     
     #prediction:
     
-    img_path = ''
+    img_path = 'here we will give the path of image'
     img  = image.load_img(img_path, target_size = (img_size, img_size))
     img_array = image.to_array(img)
     

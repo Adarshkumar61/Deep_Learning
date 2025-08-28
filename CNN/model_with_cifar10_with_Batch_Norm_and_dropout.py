@@ -13,7 +13,7 @@ x_test = x_test / 255
 y_train = tf.keras.utils.to_categorical(y_train, 10)
 y_test = tf.keras.utils.to_categorical(y_test, 10)
 
-model = models.sequential()
+model = models.Sequential()
 
 #Block 1:
 model.add(layers.Conv2D(32, (3,3), padding = 'same', activation = 'relu', input_shape = (28, 28, 3)))
