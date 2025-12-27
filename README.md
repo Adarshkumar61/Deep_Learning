@@ -1,178 +1,178 @@
-# 🧠 Deep Learning Models using Python
-==================================================
+<h1 align="center" style="color:#8A2BE2;">
+🧠 Deep Learning Models using Python
+</h1>
 
-_A structured collection of deep learning models implemented from scratch using Python._
+<p align="center" style="font-size:18px; color:#B0B0B0;">
+CNN • RNN • LSTM • Bidirectional LSTM
+</p>
 
-This repository contains **hands-on implementations of core Deep Learning architectures**, focused on **understanding how models work internally**, rather than just using high-level APIs.
+<hr>
 
-All implementations are written as **Python (.py) scripts** to strengthen **core concepts, logic flow, and training mechanics**.
+<p align="center" style="font-size:17px;">
+A <b>structured and implementation-focused collection of Deep Learning models</b> built entirely using
+<b>Python</b>, designed to strengthen understanding of <b>how neural networks work internally</b>.
+</p>
 
----
+<p align="center" style="font-size:17px;">
+All models are implemented as <b>pure Python (.py) scripts</b>, emphasizing
+<b>core logic, training mechanics, and architectural clarity</b> rather than relying only on high-level abstractions.
+</p>
 
-## 🎯 Purpose of This Repository
---------------------------------------------------
+<hr>
 
-- ✅ Build a strong foundation in Deep Learning
-- ✅ Understand neural network internals through code
-- ✅ Implement sequence and image-based models
-- ✅ Learn training, loss computation, and backpropagation
-- ✅ Prepare for advanced AI, CV, and Robotics applications
+<h2 align="center">🎯 Purpose of This Repository</h2>
 
----
+<p align="center" style="font-size:17px;">
+This repository is created to build a <b>strong conceptual and practical foundation</b> in Deep Learning.
+</p>
 
-## 🧩 Models Implemented
---------------------------------------------------
+<p align="center" style="font-size:17px;">
+✅ Understand neural network internals through code<br>
+✅ Implement sequence and image-based models<br>
+✅ Learn training loops, loss computation, and backpropagation<br>
+✅ Develop intuition for model depth, learning rate, and performance<br>
+✅ Prepare for advanced AI, Computer Vision, and Robotics applications
+</p>
 
-### 🖼️ Convolutional Neural Networks (CNN)
-📁 `CNN/`
+<hr>
 
-- Image-based deep learning models
-- Feature extraction using convolution layers
-- Pooling, activation functions, and dense layers
-- Suitable for computer vision tasks
+<h2 align="center">🧩 Models Implemented</h2>
 
----
+<p align="center" style="font-size:17px;">
+<b>🖼️ Convolutional Neural Networks (CNN)</b><br>
+📁 <code>CNN/</code><br>
+Image-based deep learning models using convolution layers, pooling, activations, and dense layers.
+</p>
 
-### 🔁 Recurrent Neural Networks (RNN)
-📁 `RNN/`
+<p align="center" style="font-size:17px;">
+<b>🔁 Recurrent Neural Networks (RNN)</b><br>
+📁 <code>RNN/</code><br>
+Sequential data modeling to capture temporal dependencies in time-series and ordered data.
+</p>
 
-- Sequential data modeling
-- Captures temporal dependencies
-- Useful for time-series and basic sequence tasks
+<p align="center" style="font-size:17px;">
+<b>🧠 Long Short-Term Memory (LSTM)</b><br>
+📁 <code>LSTM/</code><br>
+Advanced sequence models capable of learning long-term dependencies and mitigating vanishing gradients.
+</p>
 
----
+<p align="center" style="font-size:17px;">
+<b>🔂 Bidirectional LSTM</b><br>
+📁 <code>Bidirectional_LSTM/</code><br>
+Processes sequences in both forward and backward directions to improve contextual understanding.
+</p>
 
-### 🧠 Long Short-Term Memory (LSTM)
-📁 `LSTM/`
+<hr>
 
-- Handles long-term dependencies in sequences
-- Solves vanishing gradient problem
-- Used for sequence prediction and pattern learning
+<h2 align="center">🗂️ Repository Structure</h2>
 
----
-
-### 🔂 Bidirectional LSTM
-📁 `Bidirectional_LSTM/`
-
-- Processes sequences in both forward and backward directions
-- Improves context understanding
-- Commonly used in NLP and sequence classification tasks
-
----
-
-## 🗂️ Repository Structure
---------------------------------------------------
-
+<pre align="center">
 Deep_Learning/
 │
-├── CNN/ # CNN models (image-based learning)
+├── CNN/                    # Convolutional Neural Network models
+├── RNN/                    # Recurrent Neural Network models
+├── LSTM/                   # Long Short-Term Memory models
+├── Bidirectional_LSTM/     # Bidirectional LSTM implementations
+└── README.md               # Project documentation
+</pre>
 
-├── RNN/ # Recurrent Neural Network models
+<hr>
 
-├── LSTM/ # Long Short-Term Memory models
+<h2 align="center">🧠 Tech Stack</h2>
 
-├── Bidirectional_LSTM/ # Bidirectional LSTM implementations
+<p align="center" style="font-size:17px;">
+🐍 Python<br>
+🔥 TensorFlow / Keras<br>
+🔢 NumPy<br>
+📊 Matplotlib (for visualization, if used)
+</p>
 
-└── README.md # Project documentation
+<hr>
 
+<h2 align="center">🏗️ Deep Learning Workflow</h2>
 
----
-
-## 🧰 Tech Stack
---------------------------------------------------
-
-- 🐍 **Python**
-- 🔥 **TensorFlow / Keras**
-- 🔢 **NumPy**
-- 📊 **Matplotlib** (for visualization, if used)
-
----
-
-## 🏗️ Deep Learning Workflow
---------------------------------------------------
-
+<pre align="center">
 Input Data
-
-↓
-
+   ↓
 Preprocessing
-
-↓
-
+   ↓
 Model Architecture
-
-↓
-
+   ↓
 Training Loop
-
-↓
-
+   ↓
 Loss Optimization
-
-↓
-
+   ↓
 Evaluation & Prediction
+</pre>
 
+<p align="center" style="font-size:17px;">
+Each script follows this <b>learning-oriented workflow</b> to ensure conceptual clarity and reproducibility.
+</p>
 
-Each script follows this learning-oriented workflow.
+<hr>
 
----
+<h2 align="center">⚙️ Setup & Usage</h2>
 
-## ⚙️ Setup & Usage
---------------------------------------------------
+<p align="center" style="font-size:17px;">
+<b>1️⃣ Clone the Repository</b><br>
+<code>git clone https://github.com/Adarshkumar61/Deep_Learning.git</code>
+</p>
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/Adarshkumar61/Deep_Learning.git
-2️⃣ Navigate to the Repository
-cd Deep_Learning
+<p align="center" style="font-size:17px;">
+<b>2️⃣ Navigate to the Repository</b><br>
+<code>cd Deep_Learning</code>
+</p>
 
-3️⃣ Install Dependencies
-pip install tensorflow numpy matplotlib
+<p align="center" style="font-size:17px;">
+<b>3️⃣ Install Dependencies</b><br>
+<code>pip install tensorflow numpy matplotlib</code>
+</p>
 
-4️⃣ Run Any Model
-python CNN/cnn_model.py
+<p align="center" style="font-size:17px;">
+<b>4️⃣ Run Any Model</b><br>
+<code>python CNN/cnn_model.py</code>
+</p>
 
+<hr>
 
-```
+<h2 align="center">🧪 Key Observations</h2>
 
-🧪 Key Observations
+<p align="center" style="font-size:17px;">
+✔ CNNs excel at spatial feature extraction<br>
+✔ LSTMs outperform basic RNNs on long sequences<br>
+✔ Bidirectional models improve contextual learning<br>
+✔ Learning rate and model depth strongly affect convergence
+</p>
 
-✔ CNNs are effective for spatial feature learning
+<hr>
 
-✔ LSTM models handle long-term sequence dependencies better than RNNs
+<h2 align="center">📚 Learning Outcomes</h2>
 
-✔ Bidirectional models improve contextual understanding
+<p align="center" style="font-size:17px;">
+🧠 Deep understanding of neural network architectures<br>
+🔁 Practical experience with sequence modeling<br>
+🛠️ Confidence in writing and debugging training logic<br>
+🚀 Strong base for advanced AI research and applications
+</p>
 
-✔ Model depth and learning rate strongly affect performance
+<hr>
 
-📚 Learning Outcomes
+<h2 align="center">🚀 Future Enhancements</h2>
 
-Strong understanding of Deep Learning architectures
+<p align="center" style="font-size:17px;">
+🚀 Advanced CNN architectures (VGG, ResNet)<br>
+🔁 GRU and Attention mechanisms<br>
+🧠 Transformer-based models<br>
+🤖 Integration with Computer Vision & Robotics systems<br>
+☁️ Model optimization and deployment
+</p>
 
-Practical knowledge of sequence modeling
+<hr>
 
-Experience writing training logic in Python
+<h2 align="center">👨‍💻 Author</h2>
 
-Confidence in debugging and experimenting with models
-
-Solid base for advanced AI topics
-
-🔮 Future Enhancements
-
-🚀 Add advanced CNN architectures (VGG, ResNet)
-
-🔁 Implement GRU and Attention mechanisms
-
-🧠 Explore Transformer models
-
-🤖 Integrate with Computer Vision & Robotics projects
-
-☁️ Optimize and deploy trained models
-
-👨‍💻 Author
-
-Adarsh Kumar
-🎓 BCA Student | 🤖 Robotics, AI & Deep Learning Enthusiast
-
-🔗 GitHub: https://github.com/Adarshkumar61
+<p align="center" style="font-size:17px;">
+<b>Adarsh Kumar</b><br>
+🎓 BCA Student | 🤖 Robotics, AI & Deep Learning Enthusiast<br>
+🔗 <a href="https://github.com/Adarshkumar61">GitHub Profile</a>
+</p>
