@@ -6,6 +6,7 @@ Designed to be executed via main.py using run().
 import numpy as np
 import pandas as pd
 import yfinance as yf
+
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
