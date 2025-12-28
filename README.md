@@ -1,206 +1,171 @@
-<h1 align="center" style="color:#7B61FF;">
-🧠 Deep Learning Models using Python
-</h1>
+<h1 align="center">🧠 Deep Learning Models using Python</h1>
 
-<p align="center" style="font-size:18px;">
-CNN • RNN • LSTM • Bidirectional LSTM
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue">
+  <img src="https://img.shields.io/badge/TensorFlow-2.x-orange">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+  <img src="https://img.shields.io/badge/Status-Active-success">
+</p>
+
+<p align="center" style="font-size:17px;">
+A <strong>structured, modular Deep Learning repository</strong> implementing core neural network
+architectures using <strong>Python and TensorFlow</strong>.
 </p>
 
 <p align="center" style="font-size:16px;">
-A structured, runnable Deep Learning repository focused on
-<strong>implementation, experimentation, and engineering discipline</strong>.
+Focused on <strong>correct data handling, reproducibility, and engineering discipline</strong>
+rather than black-box usage.
 </p>
 
 <hr>
 
-<h2 align="center">📌 Overview</h2>
+<h2 align="center">📌 Table of Contents</h2>
+
+<p align="center">
+Overview • Project Structure • Models • Datasets • How to Run • Results • Learnings • Future Work
+</p>
+
+<hr>
+
+<h2 align="center">📖 Overview</h2>
 
 <p align="center" style="font-size:16px;">
-This repository contains <strong>four core Deep Learning models</strong> implemented using
-<strong>Python and TensorFlow</strong>, covering major problem domains:
+This repository demonstrates <strong>four foundational Deep Learning models</strong>,
+each solving a different real-world problem:
 </p>
 
 <p align="center" style="font-size:16px;">
-🖼️ Image Classification &nbsp; | &nbsp;
+🖼️ Computer Vision &nbsp; | &nbsp;
 📝 Natural Language Processing &nbsp; | &nbsp;
 📈 Time Series Forecasting &nbsp; | &nbsp;
-📊 Financial Prediction
+📊 Financial Modeling
 </p>
 
 <p align="center" style="font-size:16px;">
-Each model is designed to be:
-<br><br>
-✔ Runnable from a single entry point (<code>main.py</code>)<br>
-✔ Modular and reusable<br>
-✔ Backed by saved results (plots & models)<br>
-✔ Easy for recruiters and learners to understand
+Each model is implemented as a <strong>standalone module</strong>,
+exposed via a <code>run()</code> function and executed through
+a unified entry point (<code>main.py</code>).
 </p>
 
 <hr>
 
-<h2 align="center">🗂️ Project Structure</h2>
+<h2 align="center">🗂 Project Structure</h2>
 
 <pre align="center">
 Deep_Learning/
 │
-├── main.py                  # Entry point to run all models
-├── requirements.txt         # Required dependencies
-├── README.md                # Documentation
+├── main.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
 │
-├── models/                  # Final Deep Learning models
-│   ├── __init__.py
+├── models/
 │   ├── cnn.py
 │   ├── rnn.py
 │   ├── lstm.py
 │   └── bidirectional_lstm.py
 │
-├── notebooks/               # Jupyter notebooks (experiments)
+├── data/
+│   └── AAPL.csv
 │
-├── data/                    # Datasets (e.g., Apple.csv)
+├── outputs/
+│   ├── cnn_training_curves.png
+│   ├── rnn_training_curves.png
+│   ├── lstm_training_loss.png
+│   └── bilstm_stock_prediction.png
 │
-└── outputs/                 # Saved models & result plots
+└── notebooks/
 </pre>
 
 <hr>
 
 <h2 align="center">🚀 Models Implemented</h2>
 
-<br>
-
-<h3 align="center">🖼️ 1. Convolutional Neural Network (CNN)</h3>
-
-<p align="center" style="font-size:16px;">
-<strong>Task:</strong> Image Classification (CIFAR-10)<br>
-<strong>Concepts:</strong> Convolution, Pooling, Batch Normalization, Dropout
-</p>
-
-<p align="center" style="font-size:16px;">
-✔ Data Augmentation<br>
-✔ Regularization using Dropout<br>
-✔ Training & Validation Accuracy/Loss<br>
-✔ Saved trained model
-</p>
-
-<p align="center">
-<img src="Outputs/cnn_training_curves.png" width="700">
-</p>
+| Model | Task | Dataset | Core Concepts |
+|------|------|---------|---------------|
+| CNN | Image Classification | CIFAR-10 | Convolution, Pooling |
+| RNN | Sentiment Analysis | IMDB | Sequence Modeling |
+| LSTM | Time Series | Synthetic Data | Long-term Memory |
+| Bi-LSTM | Stock Forecasting | Apple (AAPL) | Bidirectional Context |
 
 <hr>
 
-<h3 align="center">📝 2. Recurrent Neural Network (RNN)</h3>
+<h2 align="center">📊 Datasets</h2>
 
-<p align="center" style="font-size:16px;">
-<strong>Task:</strong> IMDB Movie Review Sentiment Analysis<br>
-<strong>Concepts:</strong> Embeddings, Sequential Text Modeling
-</p>
+| Dataset | Source | Usage |
+|-------|--------|------|
+| CIFAR-10 | Keras | Image Classification |
+| IMDB Reviews | Keras | NLP |
+| Synthetic Series | Generated | Time Series |
+| Apple Stock (AAPL) | Yahoo Finance | Financial Forecasting |
 
-<p align="center" style="font-size:16px;">
-✔ Text preprocessing & padding<br>
-✔ Binary classification (positive / negative)<br>
-✔ Accuracy & Loss tracking<br>
-✔ Saved trained model
-</p>
-
-<p align="center">
-<img src="Outputs/rnn_training_curves.png" width="700">
-</p>
-
-<hr>
-
-<h3 align="center">📈 3. Long Short-Term Memory (LSTM)</h3>
-
-<p align="center" style="font-size:16px;">
-<strong>Task:</strong> Multi-step Time Series Prediction<br>
-<strong>Concepts:</strong> Sequence learning, Temporal dependencies
-</p>
-
-<p align="center" style="font-size:16px;">
-✔ Synthetic time-series data<br>
-✔ Multi-step forecasting<br>
-✔ Training loss visualization<br>
-✔ Prediction visualization
-</p>
-
-<p align="center">
-<img src="Outputs/lstm_prediction.png" width="700">
-</p>
-
-<hr>
-
-<h3 align="center">📊 4. Bidirectional LSTM (Bi-LSTM)</h3>
-
-<p align="center" style="font-size:16px;">
-<strong>Task:</strong> Stock Price Prediction (NFLX / Apple)<br>
-<strong>Concepts:</strong> Bidirectional sequence learning, real-world data handling
-</p>
-
-<p align="center" style="font-size:16px;">
-✔ Real financial dataset<br>
-✔ Proper scaling (no data leakage)<br>
-✔ Early stopping<br>
-✔ Prediction vs actual price visualization
-</p>
-
-<p align="center">
-<img src="outputs/bilstm_nflx_prediction.png" width="700">
+<p align="center" style="font-size:15px;">
+📌 Place Apple dataset at <code>data/AAPL.csv</code><br>
+Expected column: <strong>Close</strong>
 </p>
 
 <hr>
 
 <h2 align="center">▶️ How to Run</h2>
 
-<p align="center" style="font-size:16px;">
-<strong>1️⃣ Clone the repository</strong><br><br>
+<p align="center">
+<strong>1️⃣ Clone the repository</strong><br>
 <code>git clone https://github.com/Adarshkumar61/Deep_Learning.git</code>
 </p>
 
-<p align="center" style="font-size:16px;">
-<strong>2️⃣ Install dependencies</strong><br><br>
+<p align="center">
+<strong>2️⃣ Install dependencies</strong><br>
 <code>pip install -r requirements.txt</code>
 </p>
 
-<p align="center" style="font-size:16px;">
-<strong>3️⃣ Run the main program</strong><br><br>
+<p align="center">
+<strong>3️⃣ Run the project</strong><br>
 <code>python main.py</code>
 </p>
 
-<p align="center" style="font-size:16px;">
-Select a model from the menu and it will execute automatically.
+<p align="center">
+Select a model from the menu to execute it.
 </p>
 
 <hr>
 
-<h2 align="center">📊 Results & Observations</h2>
+<h2 align="center">📈 Results & Visuals</h2>
 
-<p align="center" style="font-size:16px;">
-✔ CNN performs well with data augmentation but can overfit without regularization<br><br>
-✔ Simple RNN works for short sequences but struggles with long dependencies<br><br>
-✔ LSTM improves stability in time-series prediction<br><br>
-✔ Bidirectional LSTM captures richer temporal patterns but increases computation cost
-</p>
+<p align="center"><strong>🖼️ CNN – Accuracy & Loss</strong></p>
+<p align="center"><img src="outputs/cnn_training_curves.png" width="700"></p>
+
+<p align="center"><strong>📝 RNN – Sentiment Classification</strong></p>
+<p align="center"><img src="outputs/rnn_training_curves.png" width="700"></p>
+
+<p align="center"><strong>📈 LSTM – Time Series Loss</strong></p>
+<p align="center"><img src="outputs/lstm_training_loss.png" width="700"></p>
+
+<p align="center"><strong>📊 Bi-LSTM – Stock Prediction</strong></p>
+<p align="center"><img src="outputs/bilstm_stock_prediction.png" width="700"></p>
 
 <hr>
 
-<h2 align="center">🧠 Key Learning Outcomes</h2>
+<h2 align="center">🧠 Key Learnings</h2>
 
-<p align="center" style="font-size:16px;">
-✔ Understanding Deep Learning across multiple domains<br><br>
-✔ Writing modular, reusable ML code<br><br>
-✔ Proper dataset handling & preprocessing<br><br>
-✔ Avoiding common ML mistakes (data leakage, wrong splits)<br><br>
-✔ Saving and analyzing training results
+<p align="center">
+✔ Sequence creation before splitting<br>
+✔ Avoiding data leakage<br>
+✔ RNN vs LSTM vs Bi-LSTM differences<br>
+✔ Modular ML system design<br>
+✔ Reproducible pipelines
 </p>
 
 <hr>
 
 <h2 align="center">🔮 Future Improvements</h2>
 
-<p align="center" style="font-size:16px;">
-🚀 Replace Simple RNN with GRU & Attention<br><br>
-🧠 Implement Transformer-based models<br><br>
-📊 Add more evaluation metrics (RMSE, Precision/Recall)<br><br>
-☁️ Deploy trained models using APIs or dashboards<br><br>
-🤖 Integrate Deep Learning models with Robotics & Vision systems
+<p align="center">
+🚀 GRU & Attention models<br>
+🧠 Transformer architectures<br>
+📊 Advanced evaluation metrics<br>
+☁️ Deployment with APIs<br>
+🤖 Robotics & Vision integration
 </p>
 
 <hr>
@@ -208,7 +173,7 @@ Select a model from the menu and it will execute automatically.
 <h2 align="center">👨‍💻 Author</h2>
 
 <p align="center" style="font-size:16px;">
-<strong>Adarsh Kumar</strong><br><br>
-🎓 BCA Student | 🤖 Robotics • AI • Deep Learning Enthusiast<br><br>
+<strong>Adarsh Kumar</strong><br>
+🎓 BCA Student | 🤖 Robotics • AI • Deep Learning Enthusiast<br>
 🔗 <a href="https://github.com/Adarshkumar61">GitHub Profile</a>
 </p>
