@@ -82,7 +82,7 @@ Deep_Learning/
 </p>
 
 <p align="center">
-<img src="outputs/cnn_training_curves.png" width="700">
+<img src="Outputs/cnn_training_curves.png" width="700">
 </p>
 
 <hr>
@@ -102,7 +102,7 @@ Deep_Learning/
 </p>
 
 <p align="center">
-<img src="outputs/rnn_training_curves.png" width="700">
+<img src="Outputs/rnn_training_curves.png" width="700">
 </p>
 
 <hr>
@@ -122,7 +122,7 @@ Deep_Learning/
 </p>
 
 <p align="center">
-<img src="outputs/lstm_training_loss.png" width="700">
+<img src="Outputs/lstm_training_loss.png" width="700">
 </p>
 
 <hr>
