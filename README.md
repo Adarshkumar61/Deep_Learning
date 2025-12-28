@@ -5,6 +5,9 @@
   <img src="https://img.shields.io/badge/TensorFlow-2.x-orange">
   <img src="https://img.shields.io/badge/License-MIT-green">
   <img src="https://img.shields.io/badge/Status-Active-success">
+   <img src="https://img.shields.io/badge/Numpy-red">
+  <img src="https://img.shields.io/badge/Matplotlib-pink">
+  <img src="https://img.shields.io/badge/Sk-learn-orange">
 </p>
 
 <p align="center" style="font-size:17px;">
