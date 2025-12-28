@@ -84,7 +84,7 @@ Deep_Learning/
 🐍 Python<br>
 🔥 TensorFlow / Keras<br>
 🔢 NumPy<br>
-📊 Matplotlib (for visualization, if used)
+📊 Matplotlib (for visualization)
 </p>
 
 <hr>
