@@ -136,13 +136,13 @@ Select a model from the menu to execute it.
 <h2 align="center">📈 Results & Visuals</h2>
 
 <p align="center"><strong>🖼️ CNN – Accuracy & Loss</strong></p>
-<p align="center"><img src="outputs/cnn_training_curves.png" width="700"></p>
+<p align="center"><img src="Outputs/cnn_training_curves.png" width="700"></p>
 
 <p align="center"><strong>📝 RNN – Sentiment Classification</strong></p>
-<p align="center"><img src="outputs/rnn_training_curves.png" width="700"></p>
+<p align="center"><img src="Outputs/rnn_training_curves.png" width="700"></p>
 
 <p align="center"><strong>📈 LSTM – Time Series Loss</strong></p>
-<p align="center"><img src="outputs/lstm_training_loss.png" width="700"></p>
+<p align="center"><img src="Outputs/lstm_prediction.png" width="700"></p>
 
 <p align="center"><strong>📊 Bi-LSTM – Stock Prediction</strong></p>
 <p align="center"><img src="outputs/bilstm_stock_prediction.png" width="700"></p>
