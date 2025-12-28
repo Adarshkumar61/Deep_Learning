@@ -122,7 +122,7 @@ Deep_Learning/
 </p>
 
 <p align="center">
-<img src="Outputs/lstm_training_loss.png" width="700">
+<img src="Outputs/lstm_prediction.png" width="700">
 </p>
 
 <hr>
