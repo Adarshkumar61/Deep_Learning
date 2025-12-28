@@ -22,15 +22,19 @@ def run():
     # -------------------------------
     # Load Dataset
     # -------------------------------
-    data_path = "data/Apple.csv"
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    if not os.path.exists(data_path):
-        raise FileNotFoundError(
-            "Apple.csv not found. Place it inside the 'data/' folder."
-        )
+    DATA_PATH = os.path.join(BASE_DIR, "data", "AAPL.csv")
 
-    df = pd.read_csv(data_path)
-    df = df[['close']]
+    print(f"[DEBUG] Looking for dataset at: {DATA_PATH}")
+
+    if not os.path.exists(DATA_PATH):
+       raise FileNotFoundError(
+            f"AAPL.csv not found at path: {DATA_PATH}"
+       )
+
+    df = pd.read_csv(DATA_PATH)
+    df = df[['Close']]
     df.dropna(inplace=True)
 
     prices = df.values
@@ -52,20 +56,42 @@ def run():
     # -------------------------------
     # Create Sequences
     # -------------------------------
-    SEQ_LEN = 60
+    # --------------------------------
+# Scaling (NO DATA LEAKAGE)
+# --------------------------------
+    scaler = MinMaxScaler()
+    scaled_data = scaler.fit_transform(prices)
+
+# --------------------------------
+# Create Sequences FIRST
+# --------------------------------
+    SEQ_LEN = 20
 
     def create_sequences(data, seq_len):
-        x, y = [], []
-        for i in range(seq_len, len(data)):
-            x.append(data[i - seq_len:i, 0])
-            y.append(data[i, 0])
-        return np.array(x), np.array(y)
+       x, y = [], []
+       for i in range(seq_len, len(data)):
+           x.append(data[i - seq_len:i, 0])
+           y.append(data[i, 0])
+           return np.array(x), np.array(y)
 
-    x_train, y_train = create_sequences(train_scaled, SEQ_LEN)
-    x_test, y_test = create_sequences(test_scaled, SEQ_LEN)
+    x , y = create_sequences(scaled_data, SEQ_LEN)
+    if len(x) == 0:
+       raise ValueError("No sequences created. Reduce SEQ_LEN.")
 
+# --------------------------------
+# Train / Test Split AFTER sequences
+# --------------------------------
+    split = int(len(x) * 0.8)
+
+    x_train, x_test = x[:split], x[split:]
+    y_train, y_test = y[:split], y[split:]
+
+# Reshape for LSTM
     x_train = x_train.reshape(x_train.shape[0], x_train.shape[1], 1)
-    x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], 1)
+    x_test  = x_test.reshape(x_test.shape[0], x_test.shape[1], 1)
+
+    print("[DEBUG] x_train shape:", x_train.shape)
+    print("[DEBUG] x_test shape :", x_test.shape)
 
     # -------------------------------
     # Build Bi-LSTM Model
