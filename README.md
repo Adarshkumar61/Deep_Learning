@@ -144,7 +144,7 @@ Select a model from the menu to execute it.
 <p align="center"><strong>📈 LSTM – Time Series Loss</strong></p>
 <p align="center"><img src="Outputs/lstm_prediction.png" width="700"></p>
 
-<p align="center"><strong>📊 Bi-LSTM – Stock Prediction</strong></p>
+<p align="center"><strong>📊 Bi-LSTM – Stock Prediction</strong>(pic soon)</p>
 <p align="center"><img src="outputs/bilstm_stock_prediction.png" width="700"></p>
 
 <hr>
