@@ -24,3 +24,37 @@ Performance was stable for shorter sequences but degraded for longer contexts.
 
 Validation accuracy plateaued early due to vanishing gradient limitations.
 
+📌 Observation:
+Simple RNNs are suitable for basic sequence tasks but struggle with long-term dependencies.
+
+📈 LSTM – Time Series Prediction
+
+The LSTM model successfully captured temporal patterns in sequential data.
+
+Training loss decreased smoothly, indicating stable learning.
+
+Multi-step predictions followed the overall trend of the sequence.
+
+📌 Observation:
+LSTMs handle long-term dependencies better than RNNs, making them suitable for time-series forecasting.
+
+📊 Bidirectional LSTM – Stock Price Prediction (Apple)
+
+The Bi-LSTM model captured both forward and backward temporal dependencies.
+
+Predictions closely followed the general price trend, though short-term volatility was smoothed.
+
+Proper sequence creation and scaling significantly improved stability.
+
+📌 Observation:
+Bidirectional LSTMs are effective for trend modeling but should not be used as financial advice.
+
+🧠 Overall Insights
+
+Model complexity improves representation power but increases computation cost.
+
+Correct data preprocessing and sequence handling are more important than model depth.
+
+Architectural choice should depend on the problem domain, not just accuracy.
+
+
