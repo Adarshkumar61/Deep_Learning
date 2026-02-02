@@ -16,15 +16,11 @@ import os
 def run():
     print("\n[INFO] Starting LSTM time series prediction...")
 
-    # -------------------------------
-    # Configuration
-    # -------------------------------
+
     SEQ_LEN = 5
     PRED_LEN = 4
 
-    # -------------------------------
-    # Generate Synthetic Data
-    # -------------------------------
+ 
     data = np.array([i for i in range(100)], dtype=np.float32)
 
     x, y = [], []
@@ -37,16 +33,11 @@ def run():
 
     x = x.reshape(x.shape[0], x.shape[1], 1)
 
-    # -------------------------------
-    # Train / Test Split
-    # -------------------------------
     split = int(0.8 * len(x))
     x_train, x_test = x[:split], x[split:]
     y_train, y_test = y[:split], y[split:]
 
-    # -------------------------------
-    # Build LSTM Model
-    # -------------------------------
+
     model = Sequential([
         LSTM(50, input_shape=(SEQ_LEN, 1)),
         Dense(PRED_LEN)
@@ -59,9 +50,7 @@ def run():
 
     model.summary()
 
-    # -------------------------------
-    # Train Model
-    # -------------------------------
+
     print("[INFO] Training LSTM model...")
     history = model.fit(
         x_train,
@@ -72,21 +61,16 @@ def run():
         verbose=0
     )
 
-    # -------------------------------
-    # Ensure outputs directory
-    # -------------------------------
+   
     os.makedirs("outputs", exist_ok=True)
 
-    # -------------------------------
-    # Save Model
-    # -------------------------------
+   
     model_path = "outputs/lstm_timeseries_model.h5"
     model.save(model_path)
     print(f"[INFO] Model saved to {model_path}")
 
-    # -------------------------------
-    # Plot Training Loss
-    # -------------------------------
+  
+  
     plt.figure(figsize=(6, 4))
     plt.plot(history.history["loss"], label="Train Loss")
     plt.plot(history.history["val_loss"], label="Validation Loss")
@@ -101,9 +85,9 @@ def run():
 
     print(f"[INFO] Training loss plot saved to {loss_plot_path}")
 
-    # -------------------------------
+   
     # Prediction
-    # -------------------------------
+   
     input_seq = np.array([23, 24, 25, 26, 27], dtype=np.float32)
     input_seq = input_seq.reshape(1, SEQ_LEN, 1)
 
@@ -113,9 +97,7 @@ def run():
     print(f"[INFO] Input sequence       : {input_seq.flatten()}")
     print(f"[INFO] Predicted next {PRED_LEN} values : {prediction}")
 
-    # -------------------------------
-    # Visualization of Prediction
-    # -------------------------------
+
     plt.figure(figsize=(8, 4))
 
     plt.plot(

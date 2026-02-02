@@ -41,9 +41,7 @@ def run():
         Dense(1, activation="sigmoid")
     ])
 
-    # -------------------------------
-    # Compile Model
-    # -------------------------------
+   
     model.compile(
         optimizer="adam",
         loss="binary_crossentropy",
@@ -52,9 +50,6 @@ def run():
 
     model.summary()
 
-    # -------------------------------
-    # Train Model
-    # -------------------------------
     print("\n[INFO] Training RNN model...")
     history = model.fit(
         x_train,
@@ -65,28 +60,25 @@ def run():
         verbose=1
     )
 
-    # -------------------------------
+  
     # Evaluate Model
-    # -------------------------------
+   
     loss, acc = model.evaluate(x_test, y_test, verbose=0)
     print(f"[INFO] Test Accuracy: {acc:.4f}")
     print(f"[INFO] Test Loss: {loss:.4f}")
 
-    # -------------------------------
     # Ensure outputs directory
-    # -------------------------------
+ 
     os.makedirs("outputs", exist_ok=True)
 
-    # -------------------------------
-    # Save Model
-    # -------------------------------
+    
+   
+    
     model_path = "outputs/rnn_imdb_model.h5"
     model.save(model_path)
     print(f"[INFO] Model saved to {model_path}")
 
-    # -------------------------------
-    # Training Visualization
-    # -------------------------------
+    
     plt.figure(figsize=(12, 4))
 
     plt.subplot(1, 2, 1)

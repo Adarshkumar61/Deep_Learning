@@ -19,9 +19,6 @@ from sklearn.preprocessing import MinMaxScaler
 def run():
     print("\n[INFO] Starting Bidirectional LSTM stock prediction...")
 
-    # -------------------------------
-    # Load Dataset
-    # -------------------------------
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     DATA_PATH = os.path.join(BASE_DIR, "data", "AAPL.csv")
@@ -39,32 +36,19 @@ def run():
 
     prices = df.values
 
-    # -------------------------------
-    # Train / Test Split
-    # -------------------------------
+    
     train_size = int(len(prices) * 0.8)
     train_data = prices[:train_size]
     test_data = prices[train_size:]
 
-    # -------------------------------
-    # Scaling (NO DATA LEAKAGE)
-    # -------------------------------
     scaler = MinMaxScaler(feature_range=(0, 1))
     train_scaled = scaler.fit_transform(train_data)
     test_scaled = scaler.transform(test_data)
 
-    # -------------------------------
-    # Create Sequences
-    # -------------------------------
-    # --------------------------------
-# Scaling (NO DATA LEAKAGE)
-# --------------------------------
     scaler = MinMaxScaler()
     scaled_data = scaler.fit_transform(prices)
 
-# --------------------------------
-# Create Sequences FIRST
-# --------------------------------
+
     SEQ_LEN = 20
 
     def create_sequences(data, seq_len):
@@ -78,9 +62,7 @@ def run():
     if len(x) == 0:
        raise ValueError("No sequences created. Reduce SEQ_LEN.")
 
-# --------------------------------
-# Train / Test Split AFTER sequences
-# --------------------------------
+
     split = int(len(x) * 0.8)
 
     x_train, x_test = x[:split], x[split:]
@@ -93,9 +75,7 @@ def run():
     print("[DEBUG] x_train shape:", x_train.shape)
     print("[DEBUG] x_test shape :", x_test.shape)
 
-    # -------------------------------
-    # Build Bi-LSTM Model
-    # -------------------------------
+   
     model = Sequential([
         Bidirectional(LSTM(50, return_sequences=True),
                       input_shape=(SEQ_LEN, 1)),
@@ -114,9 +94,9 @@ def run():
 
     model.summary()
 
-    # -------------------------------
-    # Train Model
-    # -------------------------------
+   
+    # model training Model
+  
     print("[INFO] Training Bi-LSTM model...")
 
     early_stop = EarlyStopping(
