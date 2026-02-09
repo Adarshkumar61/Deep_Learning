@@ -13,7 +13,7 @@ Click the **Fork** button on the top-right of this repository.
 ### 2️⃣ Clone Your Fork
 ```bash
 git clone https://github.com/<your-username>/Deep_Learning.git
-cd Deep_Learning
+cd Deep_Learning  # go to deep_learning directory
 3️⃣ Create a New Branch
 bash
 Copy code
